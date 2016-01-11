@@ -17,6 +17,7 @@ RUN curl -sSL https://rvm.io/mpapis.asc | gpg2 --import - && \
 curl -L get.rvm.io | bash -s stable && \
 source /etc/profile.d/rvm.sh && \
 /bin/bash -l -c "rvm install 2.1.2" && \
+/bin/bash -l -c "gem install rack -v=1.6.4"
 /bin/bash -l -c "gem install bundle passenger --no-ri --no-rdoc" && \
 yum install libcurl-devel -y && \
 /bin/bash -l -c "passenger-install-nginx-module --auto --auto-download --prefix=/usr/local/nginx --extra-configure-flags='--with-http_gzip_static_module --with-http_ssl_module'"
